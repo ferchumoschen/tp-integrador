@@ -1,5 +1,10 @@
-var http = require('http');
-http.createServer(function (req, res) 
-{res.writeHead(200, {'Content-Type': 'text/plain'});
-res.end('Hello World!');}
-).listen(8080);
+const express = require ("express");
+const app = express();
+const http = require("https").createServer(app)
+const PORT = 5000;
+
+app.use(express.json());
+
+http.listen(PORT,() =>{
+    console.log('listening to ${PORT}');
+})
